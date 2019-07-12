@@ -4,7 +4,7 @@ let products;
 
 async function initProducts() {
     // Get random names from a lorem ipsum api
-    const numberOfProducts = 55;
+    const numberOfProducts = 100;
     const textIpsumUrl = `https://baconipsum.com/api/?type=meat-and-filler&sentences=${numberOfProducts}&format=text`;
 
     try {
@@ -13,6 +13,7 @@ async function initProducts() {
 
         // Set the products
         products = names.map((name, index) => ({
+            id: index,
             name: name.trim(),
             price: Math.round(1 + Math.random() * 1000),
             sold: Math.round(1 + Math.random() * 1000),
