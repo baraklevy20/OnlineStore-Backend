@@ -6,7 +6,8 @@ router.get('/', function (req, res, next) {
   pageNumber = parseInt(req.query.pageNumber);
   pageSize = parseInt(req.query.pageSize);
   
-  getProducts().then(products => {    
+  getProducts().then(products => {  
+    // Slice the products by using the page size and number  
     res.send({
       products: products.slice(Math.max(0, pageNumber * pageSize),
         Math.min(products.length, (pageNumber + 1) * pageSize)),
