@@ -15,7 +15,7 @@ async function initProducts() {
         products = names.map((name, index) => ({
             id: index,
             name: name.trim(),
-            price: Math.round(1 + Math.random() * 1000),
+            price: Math.round(1 + Math.random() * 100),
             sold: Math.round(1 + Math.random() * 1000),
             image: `https://picsum.photos/id/${index}/200`
         }));

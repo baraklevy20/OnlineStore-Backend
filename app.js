@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session')
 const bodyParser = require('body-parser');
 const products = require('./routes/products')
+const purchases = require('./routes/purchases')
 const users = require('./routes/users')
 const index = require('./routes/index')
 app = express();
@@ -26,6 +27,6 @@ app.use(bodyParser.json());
 app.use("/api/", index);
 app.use("/api/users", users);
 app.use("/api/products", products);
-// app.use("/api/purchases", purchases);
+app.use("/api/purchases", purchases);
 
 module.exports = app;
